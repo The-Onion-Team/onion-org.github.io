@@ -2,7 +2,8 @@ title: Onion Org.
 description: Community aperta per imparare, condividere e costruire insieme.
 lang: it
 url: https://the-onion-team.github.io
-baseurl: ""
+baseurl: "/onion-org"
+
 
 # Nessun tema preconfezionato: usiamo un layout nostro
 # (in alternativa puoi impostare theme: jekyll-theme-cayman)
