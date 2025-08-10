@@ -1,0 +1,33 @@
+/* General styles */
+.txtcenter { text-align: center; }
+.bg-blue { background-color: #002278; }
+.bg-light { background-color: #f1f1f1; }
+.c-yellow { color: #f8cf5f; }
+.c-white { color: #f9f9fa; }
+.same-line { display: inline; }
+.pt-5 { padding-top: 50px; }
+.mt-7 { margin-top: 100px; margin-bottom: 100px; }
+.b-divider-line { border-top: 2px solid #000; margin: 20px 0; }
+.w-divider-line { border-top: 2px solid #fff; margin: 20px 0; }
+
+/* Fonts */
+.m-title { font-family: "Open Sans"; font-size: 70px; font-weight: 400; }
+.s-title { font-family: "Open Sans"; font-size: 25px; font-weight: 200; }
+.p-title { font-family: "Open Sans"; font-variant: small-caps; font-weight: 200; color: #002278; }
+.os { font-family: "Open Sans"; font-weight: 500; }
+.os-text { font-family: "Open Sans"; font-weight: 300; }
+.os-2text { font-family: "Open Sans"; font-weight: 200; }
+
+/* Navbar active link */
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #002278;
+    text-decoration: underline;
+}
+
+/* Images */
+.img-h { height: 70px; }
+.img-p { height: 100px; margin-left: 10px; }
+
+/* Team */
+.dev-name { font-size: 18px; font-weight: bold; color: #5e5e5e; }
+.dev-role { font-size: 16px; color: #5e5e5e; }
