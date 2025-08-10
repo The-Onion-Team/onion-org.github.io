@@ -1,9 +1,13 @@
 /* General styles */
 .txtcenter { text-align: center; }
-.bg-blue { background-color: #002278; }
+.bg-black { background-color: #1f1f1f; }
+.bg-grey { background-color: #a1a1a1; }
+.bg-lgrey { background-color: #cdcccc; }
+.bg-llgrey { background-color: #e6e6e6; }
 .bg-light { background-color: #f1f1f1; }
 .c-yellow { color: #f8cf5f; }
 .c-white { color: #f9f9fa; }
+.c-grey { color: #5e5e5e; }
 .same-line { display: inline; }
 .pt-5 { padding-top: 50px; }
 .mt-7 { margin-top: 100px; margin-bottom: 100px; }
@@ -11,16 +15,21 @@
 .w-divider-line { border-top: 2px solid #fff; margin: 20px 0; }
 
 /* Fonts */
-.m-title { font-family: "Open Sans"; font-size: 70px; font-weight: 400; }
-.s-title { font-family: "Open Sans"; font-size: 25px; font-weight: 200; }
-.p-title { font-family: "Open Sans"; font-variant: small-caps; font-weight: 200; color: #002278; }
-.os { font-family: "Open Sans"; font-weight: 500; }
-.os-text { font-family: "Open Sans"; font-weight: 300; }
-.os-2text { font-family: "Open Sans"; font-weight: 200; }
+.m-title { font-family: "Roboto", sans-serif; font-size: 70px; font-weight: 400; }
+.s-title { font-family: "Source Sans Pro", sans-serif; font-size: 25px; font-weight: 200; }
+.p-title { font-family: "Roboto", sans-serif; font-variant: small-caps; font-weight: 200; color: #000000; }
+.os { font-family: "Source Sans Pro", sans-serif; font-weight: 500; }
+.os-text { font-family: "Source Sans Pro", sans-serif; font-weight: 300; }
+.os-2text { font-family: "Source Sans Pro", sans-serif; font-weight: 200; }
+
+/* Immagine più contenuta */
+.hero-img { max-width: 70%; }
+@media (min-width: 768px) { .hero-img { max-width: 90%; } }
+
 
 /* Navbar active link */
 .navbar-light .navbar-nav .active>.nav-link {
-    color: #002278;
+    color: #bbbbbb;
     text-decoration: underline;
 }
 
@@ -31,3 +40,58 @@
 /* Team */
 .dev-name { font-size: 18px; font-weight: bold; color: #5e5e5e; }
 .dev-role { font-size: 16px; color: #5e5e5e; }
+
+
+.logo-glow {
+    filter: drop-shadow(0 0 10px #76767689) drop-shadow(0 0 20px #5d5d5d);
+}
+
+.hero-note {
+  font-family: "Source Sans Pro", sans-serif; /* o il font che usi */
+  font-size: 18px;
+  line-height: 1.4;
+  color: rgba(249, 249, 250, 0.8); /* bianco soft */
+  max-width: 480px; /* per non allargarsi troppo */
+}
+
+/* Hero spacing */
+.hero {
+  padding: 40px 0;
+}
+.hero-img {
+  max-width: 70%;
+}
+.hero-note {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  color: rgba(249, 249, 250, 0.85);
+  max-width: 420px;
+  display: inline-block;
+  text-align: right;
+}
+
+/* Bottone personalizzato */
+.btn-hero {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+}
+.btn-hero:hover {
+  background-color: #fff;
+  color: #000;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.8));
+}
+
+
+
+
+
