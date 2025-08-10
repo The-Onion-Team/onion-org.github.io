@@ -1,3 +1,47 @@
 title: Onion Org.
-description: Youth-led, open-to-everyone community. Learn. Share. Build.
-theme: jekyll-theme-minimal
+description: Community aperta per imparare, condividere e costruire insieme.
+lang: it
+url: https://<tuo-username>.github.io
+baseurl: /<nome-repo>  # se usi username.github.io lascia vuoto: ""
+
+# Nessun tema preconfezionato: usiamo un layout nostro
+# (in alternativa puoi impostare theme: jekyll-theme-cayman)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigazione (usata nel layout)
+nav:
+  - label: Chi siamo
+    url: /#chi-siamo
+  - label: Progetti
+    url: /#cosa-facciamo
+  - label: Unisciti
+    url: /#come-unirsi
+  - label: FAQ
+    url: /#faq
+
+# Valori di default
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /img/banner.jpg
+
+# Social opzionali (usati dai meta SEO se li compili)
+social:
+  twitter: ""
+  github: "onion-org"
+  email: "org-email@domain.tld"
+
+# Build
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Sitemap / Feed
+feed:
+  path: atom.xml
