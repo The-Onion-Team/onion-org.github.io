@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'it' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% if site.plugins contains 'jekyll-seo-tag' %}{% seo %}{% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav class="nav" aria-label="Principale">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri menu">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+          {% for item in site.nav %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© {{ 'now' | date: '%Y' }} {{ site.title }}</p>
+      <p>
+        <a href="{{ '/LICENSE' | relative_url }}">Licenza</a> ·
+        <a href="{{ '/CODE_OF_CONDUCT.html' | relative_url }}">Codice di condotta</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
