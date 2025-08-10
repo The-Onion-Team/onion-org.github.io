@@ -1,4 +1,4 @@
-/* ——— CSS di base, leggero e accessibile ——— */
+
 :root {
   --bg: #0f1115;
   --fg: #e8eaed;
@@ -83,4 +83,5 @@ body {
 /* Footer */
 .site-footer { border-top: 1px solid color-mix(in oklab, var(--fg) 10%, transparent); background: color-mix(in oklab, var(--bg) 85%, transparent); }
 .footer-inner { display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 18px 0; color: var(--muted); }
+
 .footer-inner a { color: inherit; }
