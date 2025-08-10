@@ -46,7 +46,7 @@ This repo hosts **docs, guidelines, and resources** for the community.
 
 ## 🤝 Collabs & partners
 We love collaborating with communities, orgs, companies, and public bodies.  
-Got an idea? **Email us** or open an issue.
+Got an idea? **Email us** or open an issue on the page.
 
 ## ❓ FAQ
 - **Is it paid?** Nope — activities are free except for basic costs when needed.  
