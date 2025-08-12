@@ -7,8 +7,8 @@
     <meta name="keywords" content="keywords, here">
     <meta name="author" content="Your Name">
     
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- Bootstrap CSS (align version with JS) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" crossorigin="anonymous">
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -17,20 +17,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 
-    
     <title>Onion Org.</title>
+    <style>
+      /* Layout del contenuto slide */
+      .proj-slide-title{ font-weight:600; }
+      .proj-meta-badge{ font-size:.8rem; border:1px solid rgba(0,0,0,.1); border-radius:999px; padding:.2rem .6rem; }
+      .proj-status-online{ background:#e6f7f0; }
+      .proj-status-progress{ background:#fff6e6; }
+      .proj-status-archived{ background:#f5f5f5; }
+      .proj-tag{ display:inline-block; font-size:.75rem; background:#f8f9fa; border:1px solid #e9ecef; border-radius:999px; padding:.25rem .5rem; margin:0 .25rem .25rem 0; }
+      /* Ensure navbar toggler icon is visible on light navbar (Bootstrap supplies this, but keep here as safety) */
+      .navbar-light .navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+    
+      /* Sposta i pallini (indicatori) più in basso */
+      #projectCarousel .carousel-indicators{ bottom:-50px; }
+      /* Aggiunge spazio sotto il carosello per evitare sovrapposizioni */
+      #projectCarousel{ margin-bottom:80px; }
+      @media (max-width: 576px){
+        #projectCarousel .carousel-indicators{ bottom:-40px; }
+        #projectCarousel{ margin-bottom:60px; }
+      }
+</style>
 </head>
 <body>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-xl fixed-top navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         <span class="os">Menu</span>
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item active"><a class="nav-link os" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link os" href="#projects">Projects</a></li>
             <li class="nav-item"><a class="nav-link os" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link os" href="#team">Team</a></li>
             <li class="nav-item"><a class="nav-link os" href="#contact">Contact</a></li>
@@ -39,7 +59,7 @@
 </nav>
 
 <!-- Hero Section -->
-<div id="home" class="bg-black hero">
+<div id="home" class="bg-black hero" style="padding-top:80px;">
   <div class="container">
     <div class="row align-items-center">
       
@@ -60,16 +80,35 @@
   </div>
 </div>
 
+<!-- PROJECT SLIDER -->
+<section id="projects" class="bg-lgrey" style="padding:50px 0;">
+  <div class="container">
+    <h2 class="p-title txtcenter mb-4">Projects</h2>
 
+    <div id="projectCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <!-- Indicatori -->
+      <ol class="carousel-indicators" id="proj-indicators" aria-label="Project indicators"></ol>
 
+      <!-- Slides renderizzate via JS -->
+      <div class="carousel-inner" id="proj-slides"></div>
 
+      <!-- Frecce -->
+      <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
 
-      <!-- Colonna destra vuota (serve solo per layout desktop) -->
-      <div class="col-md-6 d-none d-md-block"></div>
+      <!-- Contatore slide -->
+      <div id="proj-counter" class="d-none d-md-block" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,.65); color:#fff; padding:6px 10px; border-radius:999px; font-size:.9rem;">
+        1 / 1
+      </div>
     </div>
   </div>
-</div>
-
+</section>
 
 <!-- About Section -->
 <div id="about" class="bg-grey" style="padding:50px 0;">
@@ -84,7 +123,7 @@ If you’re passionate about collaborating, learning, and contributing to innova
 </div>
 
 <!-- Team Section -->
-<div id="team" class = "bg-lgrey" style="padding:50px 0;">
+<div id="team" class="bg-lgrey" style="padding:50px 0;">
     <div class="container">
         <h2 class="p-title txtcenter">Our Team</h2>
         <div class="row col-md-12 mt-4 txtcenter">
@@ -121,7 +160,6 @@ If you’re passionate about collaborating, learning, and contributing to innova
     </div>
 </div>
 
-
 <!-- Footer -->
 <footer class="bg-llgrey" style="padding:50px 0;">
     <div class="container" id="contact">
@@ -138,6 +176,155 @@ If you’re passionate about collaborating, learning, and contributing to innova
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="js/wow.min.js"></script>
 <script>new WOW().init();</script>
+
+<!-- Projects script: run after libraries are loaded -->
+<script>
+(function(){
+  // === 1) DATI PROGETTI ===
+  var projectsData = [
+    { id:"p1", title:"F1 Strategy ML", summary:"ML that calculates the winner of the GP, and the best strategy", cover:"img/inprogress.png", tags:["python","ML","CSV"], year:2025, status:"in progress", link:"", repo:"" },
+   ];
+
+  // === 2) ELEMENTI ===
+  function qs(id){ return document.getElementById(id); }
+  var slidesEl = qs('proj-slides');
+  var indicatorsEl = qs('proj-indicators');
+  var counterEl = qs('proj-counter');
+
+  // === 3) RENDER ===
+  function makeSlide(p, idx){
+    var item = document.createElement('div');
+    item.className = 'carousel-item' + (idx===0 ? ' active' : '');
+
+    var row = document.createElement('div');
+    row.className = 'row align-items-center';
+
+    var colImg = document.createElement('div');
+    colImg.className = 'col-md-6 mb-3 mb-md-0';
+    var img = document.createElement('img');
+    img.className = 'img-fluid rounded shadow-sm';
+    img.loading = 'lazy';
+    img.src = p.cover || 'img/placeholder.jpg';
+    img.alt = p.title;
+    colImg.appendChild(img);
+
+    var colText = document.createElement('div');
+    colText.className = 'col-md-6';
+
+    var topLine = document.createElement('div');
+    topLine.className = 'mb-2 d-flex align-items-center';
+    if(p.year){
+      var y = document.createElement('span');
+      y.className = 'proj-meta-badge mr-2';
+      y.textContent = p.year;
+      topLine.appendChild(y);
+    }
+    if(p.status){
+      var s = document.createElement('span');
+      var cls = p.status==='online' ? 'proj-status-online' : (p.status==='in progress' ? 'proj-status-progress' : 'proj-status-archived');
+      s.className = 'proj-meta-badge ' + cls;
+      s.textContent = p.status;
+      topLine.appendChild(s);
+    }
+
+    var h = document.createElement('h3'); h.className='proj-slide-title'; h.textContent = p.title;
+
+    var sum = document.createElement('p'); sum.className='text-muted'; sum.textContent = p.summary || '';
+
+    var tagsWrap = document.createElement('div');
+    (p.tags||[]).forEach(function(t){
+      var b=document.createElement('span');
+      b.className='proj-tag';
+      b.textContent=t;
+      tagsWrap.appendChild(b);
+    });
+
+    var ctaWrap = document.createElement('div'); ctaWrap.className='mt-3';
+    if(p.link){
+      var a=document.createElement('a');
+      a.href=p.link;
+      a.className='btn btn-dark mr-2';
+      a.textContent='Visit';
+      a.setAttribute('aria-label','Open '+p.title);
+      ctaWrap.appendChild(a);
+    }
+    if(p.repo){
+      var r=document.createElement('a');
+      r.href=p.repo;
+      r.className='btn btn-outline-secondary';
+      r.textContent='Code';
+      ctaWrap.appendChild(r);
+    }
+
+    colText.appendChild(topLine);
+    colText.appendChild(h);
+    colText.appendChild(sum);
+    colText.appendChild(tagsWrap);
+    colText.appendChild(ctaWrap);
+
+    row.appendChild(colImg);
+    row.appendChild(colText);
+    item.appendChild(row);
+    return item;
+  }
+
+  function render(){
+    slidesEl.innerHTML = '';
+    indicatorsEl.innerHTML = '';
+
+    projectsData.forEach(function(p, i){
+      slidesEl.appendChild(makeSlide(p, i));
+      var li = document.createElement('li');
+      li.setAttribute('data-target', '#projectCarousel');
+      li.setAttribute('data-slide-to', String(i));
+      li.setAttribute('aria-label', 'Go to slide ' + (i+1));
+      if(i===0) li.className='active';
+      indicatorsEl.appendChild(li);
+    });
+
+    updateCounter(1, projectsData.length);
+  }
+
+  function updateCounter(idx, total){
+    counterEl.textContent = idx + ' / ' + total;
+  }
+
+  // === 4) Inizializzazione dopo che librerie sono caricate ===
+  function initCarousel(){
+    var $carousel = $('#projectCarousel');
+    $carousel.carousel({ interval:false, keyboard:true, ride:false });
+
+    // Aggiorna contatore in modo affidabile usando l'indice target dell'evento
+    $carousel.on('slide.bs.carousel', function (e) {
+      if (typeof e.to === 'number') {
+        updateCounter(e.to + 1, projectsData.length);
+      } else {
+        // fallback: calcola da DOM
+        var idx = $carousel.find('.carousel-item.active').index() + 1;
+        updateCounter(idx, projectsData.length);
+      }
+    });
+
+    // Swipe touch
+    var startX=null; var threshold=50;
+    $carousel.on('touchstart', function(e){ startX = e.originalEvent.touches[0].clientX; });
+    $carousel.on('touchmove', function(e){
+      if(!startX) return;
+      var x = e.originalEvent.touches[0].clientX;
+      var dx = x - startX;
+      if(Math.abs(dx) > threshold){
+        $(this).carousel(dx>0? 'prev':'next');
+        startX=null;
+      }
+    });
+    $carousel.on('touchend', function(){ startX=null; });
+  }
+
+  // Render subito (DOM ready) e inizializza quando TUTTO è pronto (dopo load)
+  document.addEventListener('DOMContentLoaded', render);
+  window.addEventListener('load', initCarousel);
+})();
+</script>
 
 </body>
 </html>
