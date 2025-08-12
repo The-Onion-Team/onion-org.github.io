@@ -91,6 +91,23 @@
   filter: drop-shadow(0 0 12px rgba(255,255,255,0.8));
 }
 
+.carousel-item img {
+  max-width: 500px;
+  max-height: 300px;
+  width: auto;   /* mantiene proporzioni */
+  height: auto;  /* mantiene proporzioni */
+  object-fit: contain; /* per adattare senza tagliare */
+}
+
+.carousel-control-prev {
+    left: -20vh;
+}
+
+.carousel-control-next {
+  right: -20vh;
+}
+
+
 
 
 
